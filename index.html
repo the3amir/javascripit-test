@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
 
-    <h2>JavaScript Array Sort</h2>
+    <div id="app">
+       <ol>
+           <h1>{{ text }}</h1>
+           <p> reverse text: {{ revtext }}</p>
+           <todo-item></todo-item>
+           <todo-item></todo-item>
+       </ol>
+    </div>
+
+    <div id="span">
+        <span v-if="seen">span: Now you see me</span>
+    </div>
     
-    <p>Click the button to sort the array in descending order.</p>
+    <div id= "app3">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
     
-    <button onclick="myFunction()">Try it</button>
+    <div id="app4">
+        <p>{{ text }}</p>
+        <input v-model="text">
+    </div>
+
+
+    <div id="app5">
+        <ol>
+            <todo-item 
+                v-for= "item in x"
+                v-bind:todo= "item"
+                v-bind:key = "item.id"
+                ></todo-item>
+        </ol>
+    </div>
+
+    <div id="date">
+        <button @click="showDate">show new date</button>
+        <h4>{{ date }}</h4>
+    </div>
     
-    <p id="demo"></p>
+    
     
     <script src="script.js"></script>
-    
     </body>
 </html>
+
+
